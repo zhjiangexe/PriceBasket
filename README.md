@@ -1,8 +1,13 @@
 # PriceBasket
 
+## Environment
+
+- Windows10 / Ubuntu
 - JDK8
+- Developed by Intellij IDEA 2018.3 on Windows10
 - Gradle Wrapper: Gradle 5.2.1
-- Developed by Intellij IDEA 2018.3
+
+## Start
 
 1. Download project `git clone git@github.com:zhjiangexe/PriceBasket.git`
 2. Go to folder `cd PriceBasket`
@@ -14,7 +19,10 @@
 6. Testing
     1. `./gradlew test` or `gradlew test`execute testing and get testing report
     2. open `build/reports/tests/test/index.html` to check testing reports
-
+7. IDE
+    - Eclipse: File > Import > Gradle > Existing Gradle Project > Select this PriceBasket folder as Project root directory >
+    - Intellij: Just open project(Select this PriceBasket folder) 
+    
 ---
 - Data from `com.adthena.techexam.dao`
     - ItemDao: save goods data
@@ -25,8 +33,10 @@
     - DiscountPromotionProvider: find items that qualify for the discount
     - BuyMorePromotionProvider: find items that qualify for the buy more discount and calculate how many discount can get
 
-- `com.adthena.techexam.calculator.PromotionChain`: combine `PromotionProvider`
+- `com.adthena.techexam.calculator.PromotionChain`: combine `PromotionProvider` chain
 - `com.adthena.techexam.calculator.Calculator`: calculate subtotal and reduced price
 - `com.adthena.techexam.calculator.Basket`: receive input (string list) and return calculated order (includes CartItems, Subtotal, Promotions...)
 - `com.adthea.techexam.App`: commandline entry and the function of printing order
 
+---
+- 
