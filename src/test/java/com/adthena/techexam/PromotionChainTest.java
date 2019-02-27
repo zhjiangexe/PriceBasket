@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PromotionChainTest {
+class PromotionChainTest {
   private PromotionChain promotionChain = new PromotionChain();
 
   @ParameterizedTest(name = "{index}. Apples*{0}, Milk*{1}, Soup*{2}, Bread*{3}; expect discount item: {4}, qty={5}")

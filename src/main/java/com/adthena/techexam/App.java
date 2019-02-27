@@ -15,9 +15,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.adthena.techexam.util.CurrencyUtil.poundOrPenny;
+
 public class App {
 
   public static void main(String[] args) {
+
     System.out.printf(
         "%s%n%s%n%s%n",
         "1. Input a goods name(Soup, Bread, Milk, Apples) and press enter.",
@@ -52,20 +55,24 @@ public class App {
 
   private static void printOrder(Order order) {
     System.out.println("========ORDER========");
-    // goods list
+    // display goods list
     order.getCartItems().stream()
-        .map(cartItem -> String.format("%s * %d  £%.2f",
-            cartItem.getItem().getName(),
-            cartItem.getQuantity(),
-            cartItem.getItem().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())))
+        .map(cartItem ->
+            String.format("%s * %d  %s",
+                cartItem.getItem().getName(),
+                cartItem.getQuantity(),
+                poundOrPenny(
+                    cartItem.getItem().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity()))
+                )
+            )
         )
         .forEach(System.out::println);
 
-    System.out.printf("%nSubtotal: £%.2f %n", order.getSubTotal());
+    System.out.printf("%nSubtotal: %s %n", poundOrPenny(order.getSubTotal()));
 
     printSpecialOffer(order.getPromotionList());
 
-    System.out.printf("Total: £%.2f%n", order.getTotalPrice());
+    System.out.printf("Total: %s%n", poundOrPenny(order.getTotalPrice()));
   }
 
   private static void printSpecialOffer(List<Promotion> promotionList) {
@@ -76,15 +83,13 @@ public class App {
     promotionList.stream()
         .filter(promotion -> promotion.getHasUsedQty() > 0)
         .forEach(promotion -> {
-              long hasUsedQty = promotion.getHasUsedQty();
               Item item = promotion.getItem();
               BigDecimal price = item.getPrice();
+              long hasUsedQty = promotion.getHasUsedQty();
               Discount discount = promotion.getDiscount();
               BigInteger discountFormat = discount.getDiscount().multiply(BigDecimal.valueOf(100)).toBigInteger();
               BigDecimal subtract = price.multiply(discount.getDiscount()).multiply(BigDecimal.valueOf(hasUsedQty));
-              boolean b = subtract.compareTo(BigDecimal.ONE) >= 0;
-              String subractString = b ? "£" + subtract.toString() : subtract.multiply(BigDecimal.valueOf(100)).toBigInteger() + "p";
-              System.out.printf("*%s %d%% off: -%s%n", discount.getItemName(), discountFormat, subractString);
+              System.out.printf("*%s %d%% off: -%s%n", discount.getItemName(), discountFormat, poundOrPenny(subtract));
             }
         );
   }
