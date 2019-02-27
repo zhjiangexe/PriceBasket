@@ -1,10 +1,13 @@
-apply plugin: 'java'
+plugins {
+  id 'java'
+  id 'eclipse' // for elcipse setting
+}
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
-// compileJava.options.encoding = 'UTF-8'
-// compileTestJava.options.encoding = 'UTF-8'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 sourceSets {
   main {
@@ -26,7 +29,6 @@ jar {
         'Main-Class': 'com.adthena.techexam.App',
     )
   }
-  
 }
 
 repositories {
@@ -43,5 +45,23 @@ dependencies {
 }
 
 test {
-  useJUnitPlatform ()
+  useJUnitPlatform()
+}
+
+
+/** for elcipse setting **/
+eclipse {
+  jdt {
+    file {
+      File dir = file('.settings')
+      File f = file('.settings/org.eclipse.core.resources.prefs')
+      if (!dir.exists()) {
+        dir.mkdirs()
+      }
+      if (!f.exists()) {
+        f.write('eclipse.preferences.version=1\n')
+        f.append('encoding/<project>=UTF-8')
+      }
+    }
+  }
 }
