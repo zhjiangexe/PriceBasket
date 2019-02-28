@@ -12,7 +12,7 @@
 1. Download project `git clone git@github.com:zhjiangexe/PriceBasket.git`
 2. Go to folder `cd PriceBasket`
 3. Execute `./gradlew jar` or `gradlew jar` generate jar file `pricebasket.jar` under `build/libs`
-4. Go to folder `cd build/libs`, execute `java -jar pricebasket.jar -Dfile.encoding="UTF-8"`
+4. Go to folder `cd build/libs`, execute `java -jar pricebasket.jar`
 5. Running
     1. Input a goods name(Soup, Bread, Milk, Apples) and press enter, then input next goods.
     2. If you want to print order, just do not press any word, then press enter to start calculating and printing.
