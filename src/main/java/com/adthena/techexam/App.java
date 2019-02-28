@@ -1,7 +1,6 @@
 package com.adthena.techexam;
 
-import com.adthena.techexam.calculator.Basket;
-import com.adthena.techexam.calculator.BasketImp;
+import com.adthena.techexam.calculator.OrderService;
 import com.adthena.techexam.dao.ItemDao;
 import com.adthena.techexam.pojo.Discount;
 import com.adthena.techexam.pojo.Item;
@@ -18,9 +17,10 @@ import java.util.Scanner;
 import static com.adthena.techexam.util.CurrencyUtil.poundOrPenny;
 
 public class App {
+  private static OrderService orderService = new OrderService();
+  private static ItemDao itemDao = ItemDao.getInstance();
 
   public static void main(String[] args) {
-
     System.out.printf(
         "%s%n%s%n%s%n",
         "1. Input a goods name(Soup, Bread, Milk, Apples) and press enter.",
@@ -29,13 +29,11 @@ public class App {
     );
 
     List<String> list = scannerSystemIn();
-    Basket basket = new BasketImp();
-    Order order = basket.calculateOrder(list);
+    Order order = orderService.getOrder(list);
     printOrder(order);
   }
 
   private static List<String> scannerSystemIn() {
-    ItemDao itemDao = new ItemDao();
     Scanner scanner = new Scanner(System.in);
     List<String> list = new ArrayList<>();
     while (scanner.hasNextLine()) {
@@ -76,7 +74,7 @@ public class App {
   }
 
   private static void printSpecialOffer(List<Promotion> promotionList) {
-    if (promotionList.isEmpty() || promotionList.stream().map(Promotion::getHasUsedQty).reduce((total, hasUsedQty) -> total + hasUsedQty).get() <= 0) {
+    if (promotionList.isEmpty() || promotionsUnused(promotionList)) {
       System.out.println("(No offers available)");
       return;
     }
@@ -92,6 +90,12 @@ public class App {
               System.out.printf("*%s %d%% off: -%s%n", discount.getItemName(), discountFormat, poundOrPenny(subtract));
             }
         );
+  }
+
+  private static boolean promotionsUnused(List<Promotion> promotionList) {
+    return promotionList.stream()
+        .map(Promotion::getHasUsedQty)
+        .reduce((total, hasUsedQty) -> total + hasUsedQty).get() <= 0;
   }
 
 }

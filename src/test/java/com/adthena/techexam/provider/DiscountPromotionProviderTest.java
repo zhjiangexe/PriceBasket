@@ -28,13 +28,13 @@ class DiscountPromotionProviderTest {
     promotionProvider = new DiscountPromotionProvider(discountDao);
   }
 
-  @DisplayName("When give soupQty small than buyMoreQty , then have no promotion")
-  @ParameterizedTest(name = "{index}. Soup*{0}, buyMoreQty:{1}, have no promotion")
+  @DisplayName("When buy A item specific quantity Then return A item specific quantity promotion")
+  @ParameterizedTest(name = "{index}. {0}*{1}, gain promotion {2}*{3}")
   @CsvSource({
       "Apples, 1, Apples, 1",
       "Apples, 2, Apples, 2"
   })
-  void provide1(String itemName, long itemCount, String exceptItemName, long exceptItemCount) {
+  void provide(String itemName, long itemCount, String exceptItemName, long exceptItemCount) {
     List<CartItem> cartItems = TestData.cart(itemName, itemCount);
     Discount discount = new Discount();
     discount.setItemName(itemName);

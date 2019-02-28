@@ -31,7 +31,7 @@ class BuyMorePromotionProviderTest {
     promotionProvider = new BuyMorePromotionProvider(mockItemDao, buyMoreDiscountDao);
   }
 
-  @DisplayName("When give soupQty small than buyMoreQty , then have no promotion")
+  @DisplayName("When brought item quantity small than discount specific buyMoreQty, then have no promotion")
   @ParameterizedTest(name = "{index}. Soup*{0}, buyMoreQty:{1}, have no promotion")
   @CsvSource({
       "1, 2",
@@ -47,7 +47,7 @@ class BuyMorePromotionProviderTest {
     assertThat(promotions).isEmpty();
   }
 
-  @DisplayName("When give soupQty And buyMoreQty, then get promotion soupQty / buyMoreQty")
+  @DisplayName("When give brought item quantity and discount specific buyMoreQty, then get promotion soupQty / buyMoreQty")
   @ParameterizedTest(name = "{index}. Soup*{0}, buyMoreQty:{1}; expect promotion qty={2}")
   @CsvSource({
       "2, 1, 2",

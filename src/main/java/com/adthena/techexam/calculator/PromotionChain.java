@@ -18,7 +18,7 @@ public class PromotionChain {
 
   private final static List<PromotionProvider> PROVIDERS = new ArrayList<PromotionProvider>() {{
     add(new DiscountPromotionProvider(new DiscountDao()));
-    add(new BuyMorePromotionProvider(new ItemDao(), new BuyMoreDiscountDao()));
+    add(new BuyMorePromotionProvider(ItemDao.getInstance(), new BuyMoreDiscountDao()));
   }};
 
   public List<Promotion> getPromotions(List<CartItem> cartItems) {
@@ -27,4 +27,5 @@ public class PromotionChain {
         .flatMap(List::stream)
         .collect(toList());
   }
+
 }

@@ -13,14 +13,12 @@ import java.util.Set;
 
 import static java.util.stream.Collectors.toList;
 
-public class BasketImp implements Basket {
-  // Injection
-  private ItemDao itemDao = new ItemDao();
+public class OrderService {
+  private ItemDao itemDao = ItemDao.getInstance();
   private Calculator calculator = new Calculator();
   private PromotionChain promotionChain = new PromotionChain();
 
-  @Override
-  public Order calculateOrder(List<String> list) {
+  public Order getOrder(List<String> list) {
     List<CartItem> cartItems = this.getCartItems(list);
     return this.calculate(cartItems);
   }
@@ -33,8 +31,8 @@ public class BasketImp implements Basket {
   }
 
   private Order calculate(List<CartItem> cartItems) {
-    BigDecimal subTotal = calculator.getSubTotal(cartItems);
     List<Promotion> promotions = promotionChain.getPromotions(cartItems);
+    BigDecimal subTotal = calculator.getSubTotal(cartItems);
     BigDecimal subtract = calculator.getSubtract(cartItems, promotions);
 
     Order order = new Order();

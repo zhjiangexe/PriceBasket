@@ -24,6 +24,8 @@
     - Intellij: Just open project(Select this PriceBasket folder) 
     
 ---
+## Packages
+
 - Data from `com.adthena.techexam.dao`
     - ItemDao: save goods data
     - DiscountDao: save discount data "Apples have a 10% discount off their normal price this week"
@@ -33,10 +35,41 @@
     - DiscountPromotionProvider: find items that qualify for the discount
     - BuyMorePromotionProvider: find items that qualify for the buy more discount and calculate how many discount can get
 
-- `com.adthena.techexam.calculator.PromotionChain`: combine `PromotionProvider` chain
+- `com.adthena.techexam.calculator.PromotionChain`: combine `PromotionProvider`
 - `com.adthena.techexam.calculator.Calculator`: calculate subtotal and reduced price
-- `com.adthena.techexam.calculator.Basket`: receive input (string list) and return calculated order (includes CartItems, Subtotal, Promotions...)
+- `com.adthena.techexam.calculator.OrderService`: receive input (string list) and return calculated order (includes CartItems, Subtotal, Promotions...)
 - `com.adthea.techexam.App`: commandline entry and the function of printing order
 
 ---
-- 
+## Building Steps & Design
+
+Requirements have goods, give the **Items** with attributes name, price and unit
+
+- Soup – 65p per tin
+- Bread – 80p per loaf
+- Milk – £1.30 per bottle
+- Apples – £1.00 per bag
+    
+Requirements have discount, give the **Discount** with attributes name and discount, then second sentence states its condition, so give the **BuyMoreDiscount** with attributes buyMoreItem and buyMoreQty
+
+- Apples have a 10% discount off their normal price this week
+- Buy 2 tins of soup and get a loaf of bread for half price
+
+Through `App` provide customer to input goods list
+
+Through `OrderService` get items information and save the quantity of purchase in **CartItem**
+
+Through `PromotionChain`(DiscountPromotionProvider, BuyMorePromotionProvider) to calculate obtainable **Promotion** with attribute category, qty and hasUsedQty
+
+Through `Calculator` to get subtotal and totalsubtract
+
+Then `OrderService` return **Order** of combining the promotions, subtotal and total discount price
+
+finally `App` print out information for customer
+
+---
+`Promotion` use Generic to accept different **Discount**
+
+interface `PromotionProvider` defined method `List<Promotion> provide(List<CartItem> cartItems)` can be different discount condition implements
+
+`PromotionChain` combine two `PromotionProvider` implements

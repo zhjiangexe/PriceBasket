@@ -11,6 +11,15 @@ import java.util.Map;
  */
 public class ItemDao {
   private Map<String, Item> items;
+  private static ItemDao instance = null;
+
+  public static ItemDao getInstance() {
+    if (instance == null) {
+      instance = new ItemDao();
+      return instance;
+    }
+    return instance;
+  }
 
   public ItemDao() {
     items = new HashMap<>();
