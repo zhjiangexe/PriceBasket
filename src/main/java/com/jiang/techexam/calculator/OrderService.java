@@ -1,9 +1,9 @@
-package com.adthena.techexam.calculator;
+package com.jiang.techexam.calculator;
 
-import com.adthena.techexam.dao.ItemDao;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Order;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.dao.ItemDao;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Order;
+import com.jiang.techexam.vo.Promotion;
 
 import java.math.BigDecimal;
 import java.util.Collections;

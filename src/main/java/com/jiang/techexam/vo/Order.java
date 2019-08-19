@@ -1,4 +1,4 @@
-package com.adthena.techexam.vo;
+package com.jiang.techexam.vo;
 
 import java.math.BigDecimal;
 import java.util.List;

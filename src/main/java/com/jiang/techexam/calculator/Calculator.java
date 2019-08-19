@@ -1,9 +1,9 @@
-package com.adthena.techexam.calculator;
+package com.jiang.techexam.calculator;
 
-import com.adthena.techexam.pojo.Discount;
-import com.adthena.techexam.pojo.Item;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.pojo.Discount;
+import com.jiang.techexam.pojo.Item;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 
 import java.math.BigDecimal;
 import java.util.List;

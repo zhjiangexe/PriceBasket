@@ -1,10 +1,10 @@
-package com.adthena.techexam;
+package com.jiang.techexam;
 
-import com.adthena.techexam.calculator.Calculator;
-import com.adthena.techexam.calculator.PromotionChain;
-import com.adthena.techexam.tool.TestData;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.calculator.Calculator;
+import com.jiang.techexam.calculator.PromotionChain;
+import com.jiang.techexam.tool.TestData;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

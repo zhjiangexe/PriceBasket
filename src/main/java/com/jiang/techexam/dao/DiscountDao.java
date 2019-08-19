@@ -1,6 +1,6 @@
-package com.adthena.techexam.dao;
+package com.jiang.techexam.dao;
 
-import com.adthena.techexam.pojo.Discount;
+import com.jiang.techexam.pojo.Discount;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

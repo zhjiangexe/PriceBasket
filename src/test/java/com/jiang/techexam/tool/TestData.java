@@ -1,7 +1,7 @@
-package com.adthena.techexam.tool;
+package com.jiang.techexam.tool;
 
-import com.adthena.techexam.pojo.Item;
-import com.adthena.techexam.vo.CartItem;
+import com.jiang.techexam.pojo.Item;
+import com.jiang.techexam.vo.CartItem;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

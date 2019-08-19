@@ -1,7 +1,7 @@
-package com.adthena.techexam.vo;
+package com.jiang.techexam.vo;
 
-import com.adthena.techexam.pojo.Discount;
-import com.adthena.techexam.pojo.Item;
+import com.jiang.techexam.pojo.Discount;
+import com.jiang.techexam.pojo.Item;
 
 public class Promotion<T extends Discount> {
   private T discount;

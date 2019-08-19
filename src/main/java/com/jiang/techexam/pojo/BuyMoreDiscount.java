@@ -1,4 +1,4 @@
-package com.adthena.techexam.pojo;
+package com.jiang.techexam.pojo;
 
 import java.math.BigDecimal;
 

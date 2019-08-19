@@ -1,6 +1,6 @@
-package com.adthena.techexam.vo;
+package com.jiang.techexam.vo;
 
-import com.adthena.techexam.pojo.Item;
+import com.jiang.techexam.pojo.Item;
 
 public class CartItem {
   private Item item;

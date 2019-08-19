@@ -1,7 +1,7 @@
-package com.adthena.techexam.provider;
+package com.jiang.techexam.provider;
 
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 
 import java.util.List;
 

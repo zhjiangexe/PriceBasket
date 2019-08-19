@@ -1,12 +1,12 @@
-package com.adthena.techexam.provider;
+package com.jiang.techexam.provider;
 
-import com.adthena.techexam.dao.BuyMoreDiscountDao;
-import com.adthena.techexam.dao.ItemDao;
-import com.adthena.techexam.pojo.BuyMoreDiscount;
-import com.adthena.techexam.pojo.Item;
-import com.adthena.techexam.tool.TestData;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.dao.BuyMoreDiscountDao;
+import com.jiang.techexam.dao.ItemDao;
+import com.jiang.techexam.pojo.BuyMoreDiscount;
+import com.jiang.techexam.pojo.Item;
+import com.jiang.techexam.tool.TestData;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

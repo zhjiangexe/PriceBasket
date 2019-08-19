@@ -26,19 +26,19 @@
 ---
 ## Packages
 
-- Data from `com.adthena.techexam.dao`
+- Data from `com.jiang.techexam.dao`
     - ItemDao: save goods data
     - DiscountDao: save discount data "Apples have a 10% discount off their normal price this week"
     - BuyMoreDiscountDao: save discount data "Buy 2 tins of soup and get a loaf of bread for half price"
 
-- Calculate and provide promotion from `com.adthena.techexam.provider`
+- Calculate and provide promotion from `com.jiang.techexam.provider`
     - DiscountPromotionProvider: find items that qualify for the discount
     - BuyMorePromotionProvider: find items that qualify for the buy more discount and calculate how many discount can get
 
-- `com.adthena.techexam.calculator.PromotionChain`: combine `PromotionProvider`
-- `com.adthena.techexam.calculator.Calculator`: calculate subtotal and reduced price
-- `com.adthena.techexam.calculator.OrderService`: receive input (string list) and return calculated order (includes CartItems, Subtotal, Promotions...)
-- `com.adthea.techexam.App`: commandline entry and the function of printing order
+- `com.jiang.techexam.calculator.PromotionChain`: combine `PromotionProvider`
+- `com.jiang.techexam.calculator.Calculator`: calculate subtotal and reduced price
+- `com.jiang.techexam.calculator.OrderService`: receive input (string list) and return calculated order (includes CartItems, Subtotal, Promotions...)
+- `com.jiang.techexam.App`: commandline entry and the function of printing order
 
 ---
 ## Building Steps & Design

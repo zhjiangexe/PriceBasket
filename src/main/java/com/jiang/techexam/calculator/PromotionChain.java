@@ -1,13 +1,13 @@
-package com.adthena.techexam.calculator;
+package com.jiang.techexam.calculator;
 
-import com.adthena.techexam.dao.BuyMoreDiscountDao;
-import com.adthena.techexam.dao.DiscountDao;
-import com.adthena.techexam.dao.ItemDao;
-import com.adthena.techexam.provider.BuyMorePromotionProvider;
-import com.adthena.techexam.provider.DiscountPromotionProvider;
-import com.adthena.techexam.provider.PromotionProvider;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.dao.BuyMoreDiscountDao;
+import com.jiang.techexam.dao.DiscountDao;
+import com.jiang.techexam.dao.ItemDao;
+import com.jiang.techexam.provider.BuyMorePromotionProvider;
+import com.jiang.techexam.provider.DiscountPromotionProvider;
+import com.jiang.techexam.provider.PromotionProvider;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 
 import java.util.ArrayList;
 import java.util.List;

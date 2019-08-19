@@ -1,10 +1,10 @@
-package com.adthena.techexam.provider;
+package com.jiang.techexam.provider;
 
-import com.adthena.techexam.dao.DiscountDao;
-import com.adthena.techexam.pojo.Discount;
-import com.adthena.techexam.pojo.Item;
-import com.adthena.techexam.vo.CartItem;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.dao.DiscountDao;
+import com.jiang.techexam.pojo.Discount;
+import com.jiang.techexam.pojo.Item;
+import com.jiang.techexam.vo.CartItem;
+import com.jiang.techexam.vo.Promotion;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,11 @@
-package com.adthena.techexam;
+package com.jiang.techexam;
 
-import com.adthena.techexam.calculator.OrderService;
-import com.adthena.techexam.dao.ItemDao;
-import com.adthena.techexam.pojo.Discount;
-import com.adthena.techexam.pojo.Item;
-import com.adthena.techexam.vo.Order;
-import com.adthena.techexam.vo.Promotion;
+import com.jiang.techexam.calculator.OrderService;
+import com.jiang.techexam.dao.ItemDao;
+import com.jiang.techexam.pojo.Discount;
+import com.jiang.techexam.pojo.Item;
+import com.jiang.techexam.vo.Order;
+import com.jiang.techexam.vo.Promotion;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.adthena.techexam.util.CurrencyUtil.poundOrPenny;
+import static com.jiang.techexam.util.CurrencyUtil.poundOrPenny;
 
 public class App {
   private static OrderService orderService = new OrderService();
@@ -27,7 +27,6 @@ public class App {
         "2. Do not press any word, then press enter to start print order.",
         "PriceBasket:"
     );
-    // TODO list rename
     List<String> list = scannerSystemIn();
     Order order = orderService.getOrder(list);
     printOrder(order);
