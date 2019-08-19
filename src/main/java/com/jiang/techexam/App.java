@@ -27,7 +27,7 @@ public class App {
         "2. Do not press any word, then press enter to start print order.",
         "PriceBasket:"
     );
-
+    // TODO list rename
     List<String> list = scannerSystemIn();
     Order order = orderService.getOrder(list);
     printOrder(order);
@@ -52,6 +52,7 @@ public class App {
   }
 
   private static void printOrder(Order order) {
+    // TODO prepare content and print once
     System.out.println("========ORDER========");
     // display goods list
     order.getCartItems().stream()
